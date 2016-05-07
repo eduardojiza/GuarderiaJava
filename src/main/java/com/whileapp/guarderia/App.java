@@ -2,8 +2,6 @@ package com.whileapp.guarderia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

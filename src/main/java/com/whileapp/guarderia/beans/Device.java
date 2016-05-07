@@ -8,20 +8,20 @@ public class Device {
     private Integer id;
     private String name;
     private String ip;
-    private String port;
+    private int port;
     private Double temperature;
 
     public Device() {
     }
 
-    public Device(Integer id, String name, String ip, String port, Double temperature) {
+    public Device(Integer id, String name, String ip, int port, Double temperature) {
         this.id = id;
         this.name = name;
         this.ip = ip;
         this.port = port;
         this.temperature = temperature;
     }
-    
+
     public Integer getId() {
         return id;
     }
@@ -32,14 +32,6 @@ public class Device {
 
     public String getName() {
         return name;
-    }
-
-    public Double getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Double temperature) {
-        this.temperature = temperature;
     }
 
     public void setName(String name) {
@@ -54,17 +46,22 @@ public class Device {
         this.ip = ip;
     }
 
-    public String getPort() {
+    public int getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(int port) {
         this.port = port;
     }
 
-    @Override
-    public String toString() {
-        return "Device{" + "id=" + id + ", name=" + name + ", ip=" + ip + ", port=" + port + ", temperature=" + temperature + '}';
+    public Double getTemperature() {
+        return temperature;
     }
+
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
+    }
+
+
 
 }

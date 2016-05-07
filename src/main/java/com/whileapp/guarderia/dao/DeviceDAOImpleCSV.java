@@ -6,8 +6,11 @@
 package com.whileapp.guarderia.dao;
 
 import com.whileapp.guarderia.beans.Device;
+import com.whileapp.guarderia.socket.ClientSocket;
+import com.whileapp.guarderia.socket.ClientSocketImple;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,9 +20,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DeviceDAOImpleCSV implements DeviceDAO{
     private static List<Device> devices = new ArrayList();
+    
     static{
-        devices.add(new Device(1, "device1", "192.168.1.1", "8080", 55.1));
-        devices.add(new Device(2, "device2", "192.168.1.2", "8080", 33.3));
+        devices.add(new Device(1, "device1", "192.168.1.70", 9000, 55.1));
+        //devices.add(new Device(2, "device2", "192.168.1.2", "8080", 33.3));
     }
 
     @Override
@@ -45,7 +49,8 @@ public class DeviceDAOImpleCSV implements DeviceDAO{
             return null;
         }
         //Math.random()*(HASTA-DESDE+1)+DESDE
-        num = Math.random()*3 + 35;
+        ClientSocket cs = new ClientSocketImple( device.getIp(), device.getPort() );
+        num = Double.parseDouble( cs.sendMessage( "H" ) );
         device.setTemperature( num );
         System.out.println( device );
         return num;

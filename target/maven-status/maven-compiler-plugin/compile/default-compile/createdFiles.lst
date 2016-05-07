@@ -1,5 +1,7 @@
-com/whileapp/guarderia/App.class
 com/whileapp/guarderia/beans/Device.class
+com/whileapp/guarderia/socket/ClientSocket.class
+com/whileapp/guarderia/socket/ClientSocketImple.class
+com/whileapp/guarderia/App.class
 com/whileapp/guarderia/ControllerDevice.class
 com/whileapp/guarderia/dao/DeviceDAO.class
 com/whileapp/guarderia/dao/DeviceDAOImpleCSV.class
